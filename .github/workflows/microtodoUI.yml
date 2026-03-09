@@ -18,7 +18,7 @@ jobs:
     env:
       ACR_NAME: todoacro99
       ACR_LOGIN_SERVER: todoacro99.azurecr.io
-      IMAGE_NAME: todoapp
+      IMAGE_NAME: microtodoui
 
     steps:
 
