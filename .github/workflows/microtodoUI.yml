@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ACR_NAME: todoacro99
-      ACR_LOGIN_SERVER: todoacro99.azurecr.io
+      ACR_NAME: myacrkube
+      ACR_LOGIN_SERVER: myacrkube.azurecr.io
       IMAGE_NAME: microtodoui
 
     steps:
