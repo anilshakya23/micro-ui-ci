@@ -1,0 +1,12 @@
+name: CI
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: micro-ui-ci
+
+    steps:
+    - uses: actions/checkout@v4
+
