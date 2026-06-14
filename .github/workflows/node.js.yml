@@ -25,7 +25,9 @@ jobs:
     steps: 
     - uses: actions/checkout@v4
     - name: install Gitleaks
-      run: winget install -e --id Gitleaks.Gitleaks
+      run: |
+        winget install -e --id Gitleaks.Gitleaks
+        exit 0
     - name: Gitleaks checks
       run: gitleaks detect source . -r gitleaks-report.json -f json
         
