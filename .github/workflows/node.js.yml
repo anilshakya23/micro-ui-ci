@@ -15,8 +15,7 @@ jobs:
       run: |
         iwr "https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_windows-64bit.zip" -OutFile "trivy.zip"
         Expand-Archive -Path "trivy_0.71.0_windows-64bit.zip" -DestinationPath ".\trivy" -Force
-        .\trivy.exe version
-        trivy version
+        .\trivy\trivy.exe version
         
     - name: trivy scanning
       run: trivy fs --format table -o fs-report.json
