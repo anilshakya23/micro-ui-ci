@@ -7,13 +7,16 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  Security_checke:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: docker build -t microUi:latest .
+    - name: trivy installing
+      run: |
+        iwr "https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_windows-64bit.zip" -OutFile "trivy.zip"
+        Expand-Archive -Path "trivy_0.71.0_windows-64bit.zip" -DestinationPath ".\trivy" -Force
+        .\trivy.exe version
+        trivy version
+        
+    - name: trivy scanning
+      run: trivy fs --format table -o fs-report.json
