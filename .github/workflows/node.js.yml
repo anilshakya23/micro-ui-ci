@@ -30,6 +30,6 @@ jobs:
         exit 0
     - name: Gitleaks checks
       run: | 
-        gitleaks_8.18.0_windows_x64\gitleaks.exe
+        .\gitleaks_8.18.0_windows_x64\gitleaks.exe
         .\gitleaks_8.18.0_windows_x64\gitleaks.exe detect --source . --report-format json --report-path gitleaks-report.json
         
