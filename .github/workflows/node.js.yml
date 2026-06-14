@@ -18,4 +18,4 @@ jobs:
         .\trivy\trivy.exe version
         
     - name: trivy scanning
-      run: trivy fs --format table -o fs-report.json
+      run: trivy fs --format table -o fs-report.json .
