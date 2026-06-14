@@ -14,7 +14,7 @@ jobs:
     - name: trivy installing
       run: |
         iwr "https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_windows-64bit.zip" -OutFile "trivy.zip"
-        Expand-Archive -Path "trivy_0.71.0_windows-64bit.zip" -DestinationPath ".\trivy" -Force
+        Expand-Archive -Path "trivy.zip" -DestinationPath ".\trivy" -Force
         .\trivy\trivy.exe version
         
     - name: trivy scanning
