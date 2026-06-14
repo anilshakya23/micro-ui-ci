@@ -4,7 +4,7 @@ on:
   
 jobs:
   build:
-    runs-on: micro-ui-app
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
