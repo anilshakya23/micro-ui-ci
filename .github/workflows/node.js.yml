@@ -16,7 +16,13 @@ jobs:
         iwr "https://github.com/aquasecurity/trivy/releases/download/v0.71.0/trivy_0.71.0_windows-64bit.zip" -OutFile "trivy.zip"
         Expand-Archive -Path "trivy.zip" -DestinationPath ".\trivy" -Force
         .\trivy\trivy.exe version
-
     - name: trivy_scanning
       run: .\trivy\trivy.exe fs --format table -o fs-report.json .
+
+  Security_scanning:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v4
+    - name: install Gitleaks
+      run: winget install -e --id Gitleaks.Gitleaks
         
