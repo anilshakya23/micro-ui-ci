@@ -29,5 +29,5 @@ jobs:
         winget install -e --id Gitleaks.Gitleaks
         exit 0
     - name: Gitleaks checks
-      run: gitleaks detect source . -r gitleaks-report.json -f json
+      run: .\gitleaks\gitleaks.exe detect --source . --report-format json --report-path gitleaks-report.json
         
